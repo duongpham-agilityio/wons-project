@@ -18,6 +18,8 @@ import { Form, ProductPreview } from '@/components';
 const OverviewAddProduct = () => {
   const handleAddProductSubmit = async (product: IProducts) => {
     toast.success(MESSAGE.ADD_SUCCESSFULLY);
+    console.log();
+
     const product1 = await handleAddProduct(product);
 
     console.log({
@@ -25,6 +27,8 @@ const OverviewAddProduct = () => {
       product1,
     });
   };
+
+  console.log(12323);
 
   return (
     <div className="flex gap-8">
