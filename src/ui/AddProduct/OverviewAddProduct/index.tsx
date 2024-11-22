@@ -18,7 +18,12 @@ import { Form, ProductPreview } from '@/components';
 const OverviewAddProduct = () => {
   const handleAddProductSubmit = async (product: IProducts) => {
     toast.success(MESSAGE.ADD_SUCCESSFULLY);
-    await handleAddProduct(product);
+    const product1 = await handleAddProduct(product);
+
+    console.log({
+      product,
+      product1,
+    });
   };
 
   return (
