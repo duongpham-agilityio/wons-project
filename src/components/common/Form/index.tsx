@@ -82,9 +82,11 @@ const Form = ({ data, modePage, label, onSubmit, id }: FormProps) => {
 
   const safeOnSubmit = async (product: IProducts) => {
     console.log({ product });
-    await onSubmit?.(product);
+    // await onSubmit?.(product);
 
     startTransition(async () => {
+      console.log('startTransition');
+
       const isDuplicate = await checkDuplicateName(product.name);
       if (isDuplicate) {
         setDuplicateNameError(MESSAGE.DUPLICATE_NAME);
@@ -94,10 +96,10 @@ const Form = ({ data, modePage, label, onSubmit, id }: FormProps) => {
       setDuplicateNameError(null);
 
       if (onSubmit) {
-        await onSubmit(product);
         console.log({
           onSubmit: product,
         });
+        onSubmit(product);
       }
       reset();
       clearImages();
