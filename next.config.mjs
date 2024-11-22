@@ -18,20 +18,20 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: "/:all*(svg|jpg|png |webp)",
+        source: '/:all*(svg|jpg|png |webp)',
         locale: false,
         headers: [
           {
             key: 'Cache-Control',
             value: 'public, max-age=86400, must-revalidate',
-          }
-        ]
-      }
-    ]
+          },
+        ],
+      },
+    ];
   },
-  experimental: {
-    serverActions: true,
-  },
+  // experimental: {
+  //   serverActions: true,
+  // },
   async redirects() {
     return [
       {
@@ -39,7 +39,7 @@ const nextConfig = {
         destination: '/edit/:id*',
         permanent: true,
       },
-    ]
+    ];
   },
 };
 
