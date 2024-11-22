@@ -23,7 +23,7 @@ class API {
   }
 
   async post<T>(path?: string, payload: object = {}): Promise<T> {
-    noStore();
+    // noStore();
 
     const response = await fetch(`${PRODUCT_URL}${path}`, {
       method: 'POST',
